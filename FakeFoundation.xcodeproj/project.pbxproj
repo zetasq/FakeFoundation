@@ -6,20 +6,213 @@
 	objectVersion = 48;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D40C0D471F52DBE700A74911 /* FakeArrayRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40C0D461F52DBE700A74911 /* FakeArrayRef.swift */; };
+		D44534671F55915D00586962 /* Int+SqueezedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44534661F55915D00586962 /* Int+SqueezedValue.swift */; };
+		D445346A1F55A17100586962 /* FakeDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44534681F55A15E00586962 /* FakeDictionaryTests.swift */; };
+		D46B203D1F5314BB00E99208 /* FakeDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46B203C1F5314BB00E99208 /* FakeDictionary.swift */; };
+		D46B203F1F5314C700E99208 /* FakeDictionaryRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46B203E1F5314C700E99208 /* FakeDictionaryRef.swift */; };
+		D494BB8E1F52D9D4006ED3ED /* FakeFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D494BB841F52D9D4006ED3ED /* FakeFoundation.framework */; };
+		D494BB951F52D9D4006ED3ED /* FakeFoundation_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = D494BB871F52D9D4006ED3ED /* FakeFoundation_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D494BBA01F52DA3A006ED3ED /* FakeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = D494BB9F1F52DA3A006ED3ED /* FakeArray.swift */; };
+		D494BBA21F52DA8D006ED3ED /* FakeArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D494BBA11F52DA8D006ED3ED /* FakeArrayTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D494BB8F1F52D9D4006ED3ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D494BB791F52D997006ED3ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D494BB831F52D9D4006ED3ED;
+			remoteInfo = "FakeFoundation-macOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D40C0D461F52DBE700A74911 /* FakeArrayRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeArrayRef.swift; sourceTree = "<group>"; };
+		D44534661F55915D00586962 /* Int+SqueezedValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+SqueezedValue.swift"; sourceTree = "<group>"; };
+		D44534681F55A15E00586962 /* FakeDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDictionaryTests.swift; sourceTree = "<group>"; };
+		D46B203C1F5314BB00E99208 /* FakeDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDictionary.swift; sourceTree = "<group>"; };
+		D46B203E1F5314C700E99208 /* FakeDictionaryRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDictionaryRef.swift; sourceTree = "<group>"; };
+		D494BB841F52D9D4006ED3ED /* FakeFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FakeFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D494BB871F52D9D4006ED3ED /* FakeFoundation_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FakeFoundation_macOS.h; sourceTree = "<group>"; };
+		D494BB881F52D9D4006ED3ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D494BB8D1F52D9D4006ED3ED /* FakeFoundation-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FakeFoundation-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D494BB941F52D9D4006ED3ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D494BB9F1F52DA3A006ED3ED /* FakeArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeArray.swift; sourceTree = "<group>"; };
+		D494BBA11F52DA8D006ED3ED /* FakeArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeArrayTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D494BB801F52D9D4006ED3ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D494BB8A1F52D9D4006ED3ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D494BB8E1F52D9D4006ED3ED /* FakeFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
+		D467A1D51F52F42C00566AEF /* Array */ = {
+			isa = PBXGroup;
+			children = (
+				D494BB9F1F52DA3A006ED3ED /* FakeArray.swift */,
+				D40C0D461F52DBE700A74911 /* FakeArrayRef.swift */,
+			);
+			path = Array;
+			sourceTree = "<group>";
+		};
+		D46B203B1F5314A500E99208 /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				D46B203C1F5314BB00E99208 /* FakeDictionary.swift */,
+				D46B203E1F5314C700E99208 /* FakeDictionaryRef.swift */,
+				D44534661F55915D00586962 /* Int+SqueezedValue.swift */,
+			);
+			path = Dictionary;
+			sourceTree = "<group>";
+		};
 		D494BB781F52D997006ED3ED = {
 			isa = PBXGroup;
 			children = (
+				D494BB9D1F52D9F2006ED3ED /* Source */,
+				D494BB9C1F52D9DE006ED3ED /* Tests */,
+				D494BB861F52D9D4006ED3ED /* FakeFoundation-macOS */,
+				D494BB911F52D9D4006ED3ED /* FakeFoundation-macOSTests */,
+				D494BB851F52D9D4006ED3ED /* Products */,
 			);
 			sourceTree = "<group>";
 		};
+		D494BB851F52D9D4006ED3ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D494BB841F52D9D4006ED3ED /* FakeFoundation.framework */,
+				D494BB8D1F52D9D4006ED3ED /* FakeFoundation-macOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D494BB861F52D9D4006ED3ED /* FakeFoundation-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				D494BB871F52D9D4006ED3ED /* FakeFoundation_macOS.h */,
+				D494BB881F52D9D4006ED3ED /* Info.plist */,
+			);
+			path = "FakeFoundation-macOS";
+			sourceTree = "<group>";
+		};
+		D494BB911F52D9D4006ED3ED /* FakeFoundation-macOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				D494BB941F52D9D4006ED3ED /* Info.plist */,
+			);
+			path = "FakeFoundation-macOSTests";
+			sourceTree = "<group>";
+		};
+		D494BB9C1F52D9DE006ED3ED /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D494BBA11F52DA8D006ED3ED /* FakeArrayTests.swift */,
+				D44534681F55A15E00586962 /* FakeDictionaryTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		D494BB9D1F52D9F2006ED3ED /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D494BB9E1F52DA24006ED3ED /* Core */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		D494BB9E1F52DA24006ED3ED /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D467A1D51F52F42C00566AEF /* Array */,
+				D46B203B1F5314A500E99208 /* Dictionary */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D494BB811F52D9D4006ED3ED /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D494BB951F52D9D4006ED3ED /* FakeFoundation_macOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D494BB831F52D9D4006ED3ED /* FakeFoundation-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D494BB961F52D9D4006ED3ED /* Build configuration list for PBXNativeTarget "FakeFoundation-macOS" */;
+			buildPhases = (
+				D494BB7F1F52D9D4006ED3ED /* Sources */,
+				D494BB801F52D9D4006ED3ED /* Frameworks */,
+				D494BB811F52D9D4006ED3ED /* Headers */,
+				D494BB821F52D9D4006ED3ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FakeFoundation-macOS";
+			productName = "FakeFoundation-macOS";
+			productReference = D494BB841F52D9D4006ED3ED /* FakeFoundation.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D494BB8C1F52D9D4006ED3ED /* FakeFoundation-macOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D494BB991F52D9D4006ED3ED /* Build configuration list for PBXNativeTarget "FakeFoundation-macOSTests" */;
+			buildPhases = (
+				D494BB891F52D9D4006ED3ED /* Sources */,
+				D494BB8A1F52D9D4006ED3ED /* Frameworks */,
+				D494BB8B1F52D9D4006ED3ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D494BB901F52D9D4006ED3ED /* PBXTargetDependency */,
+			);
+			name = "FakeFoundation-macOSTests";
+			productName = "FakeFoundation-macOSTests";
+			productReference = D494BB8D1F52D9D4006ED3ED /* FakeFoundation-macOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D494BB791F52D997006ED3ED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
+				TargetAttributes = {
+					D494BB831F52D9D4006ED3ED = {
+						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+					D494BB8C1F52D9D4006ED3ED = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = D494BB7C1F52D997006ED3ED /* Build configuration list for PBXProject "FakeFoundation" */;
 			compatibilityVersion = "Xcode 8.0";
@@ -29,12 +222,64 @@
 				en,
 			);
 			mainGroup = D494BB781F52D997006ED3ED;
+			productRefGroup = D494BB851F52D9D4006ED3ED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				D494BB831F52D9D4006ED3ED /* FakeFoundation-macOS */,
+				D494BB8C1F52D9D4006ED3ED /* FakeFoundation-macOSTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D494BB821F52D9D4006ED3ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D494BB8B1F52D9D4006ED3ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D494BB7F1F52D9D4006ED3ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D46B203F1F5314C700E99208 /* FakeDictionaryRef.swift in Sources */,
+				D46B203D1F5314BB00E99208 /* FakeDictionary.swift in Sources */,
+				D40C0D471F52DBE700A74911 /* FakeArrayRef.swift in Sources */,
+				D44534671F55915D00586962 /* Int+SqueezedValue.swift in Sources */,
+				D494BBA01F52DA3A006ED3ED /* FakeArray.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D494BB891F52D9D4006ED3ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D445346A1F55A17100586962 /* FakeDictionaryTests.swift in Sources */,
+				D494BBA21F52DA8D006ED3ED /* FakeArrayTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D494BB901F52D9D4006ED3ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D494BB831F52D9D4006ED3ED /* FakeFoundation-macOS */;
+			targetProxy = D494BB8F1F52D9D4006ED3ED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		D494BB7D1F52D997006ED3ED /* Debug */ = {
@@ -49,6 +294,272 @@
 			};
 			name = Release;
 		};
+		D494BB971F52D9D4006ED3ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = DHNJ8N28ZZ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "FakeFoundation-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zetasq.FakeFoundation-macOS";
+				PRODUCT_NAME = FakeFoundation;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D494BB981F52D9D4006ED3ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = DHNJ8N28ZZ;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "FakeFoundation-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zetasq.FakeFoundation-macOS";
+				PRODUCT_NAME = FakeFoundation;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D494BB9A1F52D9D4006ED3ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = DHNJ8N28ZZ;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "FakeFoundation-macOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zetasq.FakeFoundation-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		D494BB9B1F52D9D4006ED3ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = DHNJ8N28ZZ;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "FakeFoundation-macOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.zetasq.FakeFoundation-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -57,6 +568,24 @@
 			buildConfigurations = (
 				D494BB7D1F52D997006ED3ED /* Debug */,
 				D494BB7E1F52D997006ED3ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D494BB961F52D9D4006ED3ED /* Build configuration list for PBXNativeTarget "FakeFoundation-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D494BB971F52D9D4006ED3ED /* Debug */,
+				D494BB981F52D9D4006ED3ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D494BB991F52D9D4006ED3ED /* Build configuration list for PBXNativeTarget "FakeFoundation-macOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D494BB9A1F52D9D4006ED3ED /* Debug */,
+				D494BB9B1F52D9D4006ED3ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
