@@ -12,7 +12,7 @@ private let MAX_LOAD_INVERSE = 1.0 / 0.75
 
 final class FakeDictionaryBuffer<K: Hashable, V> {
   
-  private var _capacity: Int
+  private var _capacityExp: Int // capacity == 1 << _capacityExp
   
   private var _size: Int
   
@@ -23,21 +23,21 @@ final class FakeDictionaryBuffer<K: Hashable, V> {
   private var _ptrToValues: UnsafeMutablePointer<V>
   
   init() {
-    _capacity = 8
+    _capacityExp = 3
     _size = 0
     
-    _bits = UnsafeMutablePointer<UInt8>.allocate(capacity: _capacity / 8)
-    _bits.initialize(to: 0, count: _capacity / 8)
+    _bits = UnsafeMutablePointer<UInt8>.allocate(capacity: (1 << _capacityExp) / 8)
+    _bits.initialize(to: 0, count: (1 << _capacityExp) / 8)
     
-    _ptrToKeys = UnsafeMutablePointer<K>.allocate(capacity: _capacity)
+    _ptrToKeys = UnsafeMutablePointer<K>.allocate(capacity: (1 << _capacityExp))
     
-    _ptrToValues = UnsafeMutablePointer<V>.allocate(capacity: _capacity)
+    _ptrToValues = UnsafeMutablePointer<V>.allocate(capacity: (1 << _capacityExp))
   }
   
   func copy() -> FakeDictionaryBuffer<K, V> {
     let newDictionaryRef = FakeDictionaryBuffer<K, V>()
     
-    for i in 0..<_capacity {
+    for i in 0..<(1 << _capacityExp) {
       if !_isHole(at: i) {
         newDictionaryRef[_ptrToKeys[i]] = _ptrToValues[i]
       }
@@ -48,14 +48,14 @@ final class FakeDictionaryBuffer<K: Hashable, V> {
   
   // MARK: - Bits functions
   private func _next(forIndex index: Int) -> Int {
-    return (index + 1) % _capacity
+    return (index + 1) % (1 << _capacityExp)
   }
   
   private func _prev(forIndex index: Int) -> Int {
     if index > 0 {
       return index - 1
     } else {
-      return _capacity - 1
+      return (1 << _capacityExp) - 1
     }
   }
   
@@ -89,7 +89,7 @@ final class FakeDictionaryBuffer<K: Hashable, V> {
   
   // MARK: - Keys and Values functions
   private func _find(key: K) -> V? {
-    let squeezedHashValue = key.hashValue.squeezedValue(forBinaryLength: Int(log2(Double(_capacity))))
+    let squeezedHashValue = key.hashValue.squeezedValue(forBinaryLength: _capacityExp)
     
     var idx = squeezedHashValue
     
@@ -108,7 +108,7 @@ final class FakeDictionaryBuffer<K: Hashable, V> {
   }
   
   private func _clear(key: K) {
-    let squeezedHashValue = key.hashValue.squeezedValue(forBinaryLength: Int(log2(Double(_capacity))))
+    let squeezedHashValue = key.hashValue.squeezedValue(forBinaryLength: _capacityExp)
     
     var idx = squeezedHashValue
     
@@ -130,7 +130,7 @@ final class FakeDictionaryBuffer<K: Hashable, V> {
             break
           }
           
-          guard _ptrToKeys[nextIdx].hashValue.squeezedValue(forBinaryLength: Int(log2(Double(_capacity)))) != nextIdx else {
+          guard _ptrToKeys[nextIdx].hashValue.squeezedValue(forBinaryLength: _capacityExp) != nextIdx else {
             break
           }
           
@@ -152,10 +152,10 @@ final class FakeDictionaryBuffer<K: Hashable, V> {
     }
   }
   
-  private func _increaseCapacity() {
+  private func _doubleCapacity() {
     var kvPairs: [(K, V)] = []
     
-    for i in 0..<_capacity {
+    for i in 0..<(1 << _capacityExp) {
       if !_isHole(at: i) {
         kvPairs.append((_ptrToKeys[i], _ptrToValues[i]))
         
@@ -164,20 +164,20 @@ final class FakeDictionaryBuffer<K: Hashable, V> {
       }
     }
     
-    _ptrToKeys.deallocate(capacity: _capacity)
-    _ptrToValues.deallocate(capacity: _capacity)
+    _ptrToKeys.deallocate(capacity: (1 << _capacityExp))
+    _ptrToValues.deallocate(capacity: (1 << _capacityExp))
     
-    _bits.deinitialize(count: _capacity / 8)
-    _bits.deallocate(capacity: _capacity / 8)
+    _bits.deinitialize(count: (1 << _capacityExp) / 8)
+    _bits.deallocate(capacity: (1 << _capacityExp) / 8)
     
     _size = 0
-    _capacity <<= 1
+    _capacityExp += 1
     
-    _bits = UnsafeMutablePointer<UInt8>.allocate(capacity: _capacity / 8)
-    _bits.initialize(to: 0, count: _capacity / 8)
+    _bits = UnsafeMutablePointer<UInt8>.allocate(capacity: (1 << _capacityExp) / 8)
+    _bits.initialize(to: 0, count: (1 << _capacityExp) / 8)
     
-    _ptrToKeys = UnsafeMutablePointer<K>.allocate(capacity: _capacity)
-    _ptrToValues = UnsafeMutablePointer<V>.allocate(capacity: _capacity)
+    _ptrToKeys = UnsafeMutablePointer<K>.allocate(capacity: (1 << _capacityExp))
+    _ptrToValues = UnsafeMutablePointer<V>.allocate(capacity: (1 << _capacityExp))
     
     for (key, value) in kvPairs {
       _insert(value, forKey: key)
@@ -185,7 +185,7 @@ final class FakeDictionaryBuffer<K: Hashable, V> {
   }
   
   private func _insert(_ value: V, forKey key: K) {
-    let squeezedHashValue = key.hashValue.squeezedValue(forBinaryLength: Int(log2(Double(_capacity))))
+    let squeezedHashValue = key.hashValue.squeezedValue(forBinaryLength: _capacityExp)
     
     var idx = squeezedHashValue
     
@@ -211,8 +211,8 @@ final class FakeDictionaryBuffer<K: Hashable, V> {
     }
     set {
       if let value = newValue {
-        if Double(_capacity) / Double(_size) < MAX_LOAD_INVERSE {
-          _increaseCapacity()
+        if Double(1 << _capacityExp) / Double(_size) < MAX_LOAD_INVERSE {
+          _doubleCapacity()
         }
         _insert(value, forKey: key)
       } else {
@@ -223,7 +223,7 @@ final class FakeDictionaryBuffer<K: Hashable, V> {
   
   func pp() -> [String] {
     var result: [String] = []
-    for i in 0..<_capacity {
+    for i in 0..<(1 << _capacityExp) {
       if _isHole(at: i) {
         result.append("\(i): hole")
       } else {
