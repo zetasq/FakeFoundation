@@ -10,55 +10,55 @@ import Foundation
 
 public struct FakeArray<T> {
   
-  private var _arrayRef: FakeArrayRef<T>
+  private var _arrayBuffer: FakeArrayBuffer<T>
   
   public init(capacity: Int) {
-    _arrayRef = FakeArrayRef<T>(capacity: capacity)
+    _arrayBuffer = FakeArrayBuffer<T>(capacity: capacity)
   }
   
   public init() {
-    _arrayRef = FakeArrayRef<T>()
+    _arrayBuffer = FakeArrayBuffer<T>()
   }
   
   public var size: Int {
-    return _arrayRef.size
+    return _arrayBuffer.size
   }
   
   public subscript(_ index: Int) -> T {
     get {
-      return _arrayRef[index]
+      return _arrayBuffer[index]
     }
     set {
-      if !isKnownUniquelyReferenced(&_arrayRef) {
-        _arrayRef = _arrayRef._copy()
+      if !isKnownUniquelyReferenced(&_arrayBuffer) {
+        _arrayBuffer = _arrayBuffer._copy()
       }
       
-      _arrayRef[index] = newValue
+      _arrayBuffer[index] = newValue
     }
   }
   
   public mutating func append(_ obj: T) {
-    if !isKnownUniquelyReferenced(&_arrayRef) {
-      _arrayRef = _arrayRef._copy()
+    if !isKnownUniquelyReferenced(&_arrayBuffer) {
+      _arrayBuffer = _arrayBuffer._copy()
     }
     
-    _arrayRef.append(obj)
+    _arrayBuffer.append(obj)
   }
   
   public mutating func insert(_ obj: T, at Index: Int) {
-    if !isKnownUniquelyReferenced(&_arrayRef) {
-      _arrayRef = _arrayRef._copy()
+    if !isKnownUniquelyReferenced(&_arrayBuffer) {
+      _arrayBuffer = _arrayBuffer._copy()
     }
     
-    _arrayRef.insert(obj, at: Index)
+    _arrayBuffer.insert(obj, at: Index)
   }
   
   public mutating func remove(at index: Int) {
-    if !isKnownUniquelyReferenced(&_arrayRef) {
-      _arrayRef = _arrayRef._copy()
+    if !isKnownUniquelyReferenced(&_arrayBuffer) {
+      _arrayBuffer = _arrayBuffer._copy()
     }
     
-    _arrayRef.remove(at: index)
+    _arrayBuffer.remove(at: index)
   }
 }
 

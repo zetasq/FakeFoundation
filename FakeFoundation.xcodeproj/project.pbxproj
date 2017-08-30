@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D40C0D471F52DBE700A74911 /* FakeArrayRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40C0D461F52DBE700A74911 /* FakeArrayRef.swift */; };
+		D40C0D471F52DBE700A74911 /* FakeArrayBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D40C0D461F52DBE700A74911 /* FakeArrayBuffer.swift */; };
 		D44534671F55915D00586962 /* Int+SqueezedValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44534661F55915D00586962 /* Int+SqueezedValue.swift */; };
 		D445346A1F55A17100586962 /* FakeDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44534681F55A15E00586962 /* FakeDictionaryTests.swift */; };
 		D46B203D1F5314BB00E99208 /* FakeDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46B203C1F5314BB00E99208 /* FakeDictionary.swift */; };
-		D46B203F1F5314C700E99208 /* FakeDictionaryRef.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46B203E1F5314C700E99208 /* FakeDictionaryRef.swift */; };
+		D46B203F1F5314C700E99208 /* FakeDictionaryBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46B203E1F5314C700E99208 /* FakeDictionaryBuffer.swift */; };
 		D494BB8E1F52D9D4006ED3ED /* FakeFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D494BB841F52D9D4006ED3ED /* FakeFoundation.framework */; };
 		D494BB951F52D9D4006ED3ED /* FakeFoundation_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = D494BB871F52D9D4006ED3ED /* FakeFoundation_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D494BBA01F52DA3A006ED3ED /* FakeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = D494BB9F1F52DA3A006ED3ED /* FakeArray.swift */; };
@@ -29,11 +29,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D40C0D461F52DBE700A74911 /* FakeArrayRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeArrayRef.swift; sourceTree = "<group>"; };
+		D40C0D461F52DBE700A74911 /* FakeArrayBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeArrayBuffer.swift; sourceTree = "<group>"; };
 		D44534661F55915D00586962 /* Int+SqueezedValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+SqueezedValue.swift"; sourceTree = "<group>"; };
 		D44534681F55A15E00586962 /* FakeDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDictionaryTests.swift; sourceTree = "<group>"; };
 		D46B203C1F5314BB00E99208 /* FakeDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDictionary.swift; sourceTree = "<group>"; };
-		D46B203E1F5314C700E99208 /* FakeDictionaryRef.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDictionaryRef.swift; sourceTree = "<group>"; };
+		D46B203E1F5314C700E99208 /* FakeDictionaryBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeDictionaryBuffer.swift; sourceTree = "<group>"; };
 		D494BB841F52D9D4006ED3ED /* FakeFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FakeFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D494BB871F52D9D4006ED3ED /* FakeFoundation_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FakeFoundation_macOS.h; sourceTree = "<group>"; };
 		D494BB881F52D9D4006ED3ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				D494BB9F1F52DA3A006ED3ED /* FakeArray.swift */,
-				D40C0D461F52DBE700A74911 /* FakeArrayRef.swift */,
+				D40C0D461F52DBE700A74911 /* FakeArrayBuffer.swift */,
 			);
 			path = Array;
 			sourceTree = "<group>";
@@ -75,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				D46B203C1F5314BB00E99208 /* FakeDictionary.swift */,
-				D46B203E1F5314C700E99208 /* FakeDictionaryRef.swift */,
+				D46B203E1F5314C700E99208 /* FakeDictionaryBuffer.swift */,
 				D44534661F55915D00586962 /* Int+SqueezedValue.swift */,
 			);
 			path = Dictionary;
@@ -254,9 +254,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D46B203F1F5314C700E99208 /* FakeDictionaryRef.swift in Sources */,
+				D46B203F1F5314C700E99208 /* FakeDictionaryBuffer.swift in Sources */,
 				D46B203D1F5314BB00E99208 /* FakeDictionary.swift in Sources */,
-				D40C0D471F52DBE700A74911 /* FakeArrayRef.swift in Sources */,
+				D40C0D471F52DBE700A74911 /* FakeArrayBuffer.swift in Sources */,
 				D44534671F55915D00586962 /* Int+SqueezedValue.swift in Sources */,
 				D494BBA01F52DA3A006ED3ED /* FakeArray.swift in Sources */,
 			);

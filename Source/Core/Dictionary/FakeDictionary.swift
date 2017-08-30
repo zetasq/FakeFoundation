@@ -9,26 +9,26 @@ import Foundation
 
 public struct FakeDictionary<K: Hashable, V> {
   
-  private var _dictionaryRef: FakeDictionaryRef<K, V>
+  private var _dictionaryBuffer: FakeDictionaryBuffer<K, V>
   
   public init() {
-    _dictionaryRef = FakeDictionaryRef<K, V>()
+    _dictionaryBuffer = FakeDictionaryBuffer<K, V>()
   }
   
   public subscript(_ key: K) -> V? {
     get {
-      return _dictionaryRef[key]
+      return _dictionaryBuffer[key]
     }
     set {
-      if !isKnownUniquelyReferenced(&_dictionaryRef) {
-        _dictionaryRef = _dictionaryRef.copy()
+      if !isKnownUniquelyReferenced(&_dictionaryBuffer) {
+        _dictionaryBuffer = _dictionaryBuffer.copy()
       }
       
-      _dictionaryRef[key] = newValue
+      _dictionaryBuffer[key] = newValue
     }
   }
   
   public func pp() -> [String] {
-    return _dictionaryRef.pp()
+    return _dictionaryBuffer.pp()
   }
 }
