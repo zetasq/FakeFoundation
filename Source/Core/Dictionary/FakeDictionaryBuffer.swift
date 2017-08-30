@@ -34,6 +34,21 @@ final class FakeDictionaryBuffer<K: Hashable, V> {
     _ptrToValues = UnsafeMutablePointer<V>.allocate(capacity: (1 << _capacityExp))
   }
   
+  deinit {
+    for i in 0..<(1 << _capacityExp) {
+      if !_isHole(at: i) {
+        (_ptrToKeys+i).deinitialize()
+        (_ptrToValues+i).deinitialize()
+      }
+    }
+    
+    _bits.deinitialize(count: (1 << _capacityExp) / 8)
+    
+    _bits.deallocate(capacity: (1 << _capacityExp) / 8)
+    _ptrToKeys.deallocate(capacity: (1 << _capacityExp))
+    _ptrToValues.deallocate(capacity: (1 << _capacityExp))
+  }
+  
   func copy() -> FakeDictionaryBuffer<K, V> {
     let newDictionaryRef = FakeDictionaryBuffer<K, V>()
     
