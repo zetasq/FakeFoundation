@@ -43,7 +43,7 @@ final class FakeDictionaryBuffer<K: Hashable, V> {
     }
     
     _bits.deinitialize(count: (1 << _capacityExp) / 8)
-    
+
     _bits.deallocate(capacity: (1 << _capacityExp) / 8)
     _ptrToKeys.deallocate(capacity: (1 << _capacityExp))
     _ptrToValues.deallocate(capacity: (1 << _capacityExp))

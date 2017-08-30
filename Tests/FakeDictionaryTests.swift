@@ -32,4 +32,35 @@ class FakeDictionaryTests: XCTestCase {
     }
   }
   
+  func testDictionaryDeinit() {
+    
+    var dictionary: FakeDictionary<NSObject, NSObject>? = FakeDictionary<NSObject, NSObject>()
+    
+    var key1: NSObject? = NSObject()
+    weak var weakKey1 = key1
+    
+    var value1: NSObject? = NSObject()
+    weak var weakValue1 = value1
+    
+    var key2: NSObject? = NSObject()
+    weak var weakKey2 = key2
+    
+    var value2: NSObject? = NSObject()
+    weak var weakValue2 = value2
+    
+    dictionary?[key1!] = value1
+    dictionary?[key2!] = value2
+    
+    key1 = nil
+    value1 = nil
+    key2 = nil
+    value2 = nil
+    
+    dictionary = nil
+    
+    XCTAssert(weakKey1 == nil)
+    XCTAssert(weakValue1 == nil)
+    XCTAssert(weakKey2 == nil)
+    XCTAssert(weakValue2 == nil)
+  }
 }
